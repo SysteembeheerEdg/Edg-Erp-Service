@@ -1,5 +1,5 @@
 <?php
-namespace Bold\PIMService\Test;
+namespace Edg\ErpService\Test;
 
 abstract class Client extends \PHPUnit_Framework_TestCase
 {
@@ -8,7 +8,7 @@ abstract class Client extends \PHPUnit_Framework_TestCase
      */
     protected $soapMock;
     /**
-     * @var \Bold\PIMService\Client
+     * @var \Edg\ErpService\Client
      */
     protected $client;
 
@@ -18,7 +18,7 @@ abstract class Client extends \PHPUnit_Framework_TestCase
 
         $this->soapMock = $this->getMockFromWsdl(__DIR__ . '/_files/edg.wsdl');
 
-        $client = new \Bold\PIMService\Client(false);
+        $client = new \Edg\ErpService\Client(false);
         $client->setSoapClient($this->soapMock);
         
         $this->client = $client;

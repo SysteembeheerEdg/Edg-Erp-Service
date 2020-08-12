@@ -6,7 +6,7 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Test;
+namespace Edg\ErpService\Test;
 
 
 class OrderExportTest extends Client
@@ -58,7 +58,7 @@ class OrderExportTest extends Client
 
     protected function createOrder()
     {
-        return new \Bold\PIMService\DataModel\Order([
+        return new \Edg\ErpService\DataModel\Order([
             'incrementId' => 1000001,
             'shipping_method' => 'postnl',
             'shipping_amount' => "4,20",

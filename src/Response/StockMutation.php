@@ -6,13 +6,13 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Response;
+namespace Edg\ErpService\Response;
 
 
 class StockMutation
 {
     /**
-     * @var \Bold\PIMService\DataModel\StockMutation[]
+     * @var \Edg\ErpService\DataModel\StockMutation[]
      */
     protected $mutations = [];
     protected $result;
@@ -30,7 +30,7 @@ class StockMutation
     }
 
     /**
-     * @return \Bold\PIMService\DataModel\StockMutation[]
+     * @return \Edg\ErpService\DataModel\StockMutation[]
      */
     public function getMutations()
     {
@@ -42,7 +42,7 @@ class StockMutation
         return $this->status;
     }
     
-    public function addMutation(\Bold\PIMService\DataModel\StockMutation $mutation)
+    public function addMutation(\Edg\ErpService\DataModel\StockMutation $mutation)
     {
         $this->mutations[] = $mutation;
         return $this;

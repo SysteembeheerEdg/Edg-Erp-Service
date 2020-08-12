@@ -1,5 +1,5 @@
 <?php
-namespace Bold\PIMService\Test;
+namespace Edg\ErpService\Test;
 
 class StockMutationsTest extends Client
 {
@@ -16,7 +16,7 @@ class StockMutationsTest extends Client
         $result2->v_stockmutations = "<articles><environment>dummy</environment><article><sku>abcd-1234</sku><stock>2</stock></article><article><sku>06094567763</sku><stock>4</stock></article></articles>";
 
         $result3 = new \stdClass;
-        $result3->v_status = \Bold\PIMService\Sync\Pull\StockMutations::NO_MUTATIONS;
+        $result3->v_status = \Edg\ErpService\Sync\Pull\StockMutations::NO_MUTATIONS;
         $result3->result = null;
         $result3->v_stockmutations = "";
 

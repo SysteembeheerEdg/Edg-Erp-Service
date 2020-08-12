@@ -6,13 +6,13 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Response;
+namespace Edg\ErpService\Response;
 
 
 class ArticleInfo
 {
     /**
-     * @var \Bold\PIMService\DataModel\ArticleInfo[]
+     * @var \Edg\ErpService\DataModel\ArticleInfo[]
      */
     protected $articles = [];
     protected $result;
@@ -28,7 +28,7 @@ class ArticleInfo
     }
 
     /**
-     * @return \Bold\PIMService\DataModel\ArticleInfo[]
+     * @return \Edg\ErpService\DataModel\ArticleInfo[]
      */
     public function getArticles()
     {
@@ -36,10 +36,10 @@ class ArticleInfo
     }
     
     /**
-     * @param \Bold\PIMService\DataModel\ArticleInfo $article
+     * @param \Edg\ErpService\DataModel\ArticleInfo $article
      * @return $this
      */
-    public function addArticle(\Bold\PIMService\DataModel\ArticleInfo $article)
+    public function addArticle(\Edg\ErpService\DataModel\ArticleInfo $article)
     {
         $this->articles[] = $article;
         return $this;

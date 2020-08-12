@@ -24,7 +24,7 @@ class Client
 
     /**
      * @var array $clientSettings       additional settings to pass on to the commands
-     * @see \Bold\PIMService\Sync\Request::$settings
+     * @see \Edg\ErpService\Sync\Request::$settings
      */
     protected $clientSettings;
 
@@ -67,7 +67,7 @@ class Client
      * @param string $environment   Specifies which environment on the Progress server needs to be checked for stock updates
      * @return Response\StockMutation[]
      * 
-     * @uses \Bold\PIMService\Sync\Pull\StockMutations::execute
+     * @uses \Edg\ErpService\Sync\Pull\StockMutations::execute
      */
     public function pullStockUpdates($environment)
     {
@@ -81,7 +81,7 @@ class Client
      * @param array $skus   list of skus that need to be synced with data from Progress
      * @return Response\ArticleInfo[]
      * 
-     * @uses \Bold\PIMService\Sync\Pull\ArticleInfo::execute
+     * @uses \Edg\ErpService\Sync\Pull\ArticleInfo::execute
      */
     public function pullArticleInfo($skus)
     {
@@ -96,7 +96,7 @@ class Client
      * @param array $args
      * @return Response\UploadOrders[]
      * 
-     * @uses \Bold\PIMService\Sync\Push\OrderExport::execute
+     * @uses \Edg\ErpService\Sync\Push\OrderExport::execute
      */
     public function pushNewOrder(DataModel\Order $order, $args = [])
     {
@@ -107,7 +107,7 @@ class Client
     /**
      * fetch order status updates
      *
-     * @uses \Bold\PIMService\Sync\Pull\OrderImport::execute
+     * @uses \Edg\ErpService\Sync\Pull\OrderImport::execute
      *
      * @param $environment
      * @return Response\OrderStatus[]

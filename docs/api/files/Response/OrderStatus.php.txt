@@ -6,7 +6,7 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Response;
+namespace Edg\ErpService\Response;
 
 
 class OrderStatus
@@ -14,7 +14,7 @@ class OrderStatus
     protected $result;
     protected $status;
     /**
-     * @var \Bold\PIMService\DataModel\OrderStatus[]
+     * @var \Edg\ErpService\DataModel\OrderStatus[]
      */
     protected $orders = [];
 
@@ -30,7 +30,7 @@ class OrderStatus
     }
 
     /**
-     * @return \Bold\PIMService\DataModel\OrderStatus[]
+     * @return \Edg\ErpService\DataModel\OrderStatus[]
      */
     public function getOrders()
     {
@@ -50,7 +50,7 @@ class OrderStatus
     }
 
 
-    public function addOrder(\Bold\PIMService\DataModel\OrderStatus $order)
+    public function addOrder(\Edg\ErpService\DataModel\OrderStatus $order)
     {
         $this->orders[] = $order;
         return $this;

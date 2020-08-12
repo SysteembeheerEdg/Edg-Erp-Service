@@ -1,5 +1,5 @@
 <?php
-namespace Bold\PIMService\Test;
+namespace Edg\ErpService\Test;
 
 
 class ArticleInfoTest extends Client

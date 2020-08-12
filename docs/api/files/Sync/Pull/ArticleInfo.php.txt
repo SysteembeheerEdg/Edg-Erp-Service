@@ -6,13 +6,13 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Sync\Pull;
+namespace Edg\ErpService\Sync\Pull;
 
 
-use Bold\PIMService\DataModel\ArticleInfo as ArticleInfoModel;
-use Bold\PIMService\Response\ArticleInfo as ArticleInfoResponse;
+use Edg\ErpService\DataModel\ArticleInfo as ArticleInfoModel;
+use Edg\ErpService\Response\ArticleInfo as ArticleInfoResponse;
 
-class ArticleInfo extends \Bold\PIMService\Sync\Request
+class ArticleInfo extends \Edg\ErpService\Sync\Request
 {
     const ARTICLE_INFO_SYNC_CHUNK_SIZE = 5;
 
@@ -39,7 +39,7 @@ class ArticleInfo extends \Bold\PIMService\Sync\Request
     }
 
     /**
-     * @return \Bold\PIMService\Response\ArticleInfo[]
+     * @return \Edg\ErpService\Response\ArticleInfo[]
      */
     public function execute()
     {

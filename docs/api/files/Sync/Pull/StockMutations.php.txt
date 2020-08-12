@@ -6,11 +6,11 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Sync\Pull;
+namespace Edg\ErpService\Sync\Pull;
 
-use Bold\PIMService\DataModel\StockMutation;
-use Bold\PIMService\Response\StockMutation as StockMutationResponse;
-use Bold\PIMService\Sync\Request;
+use Edg\ErpService\DataModel\StockMutation;
+use Edg\ErpService\Response\StockMutation as StockMutationResponse;
+use Edg\ErpService\Sync\Request;
 
 class StockMutations extends Request
 {

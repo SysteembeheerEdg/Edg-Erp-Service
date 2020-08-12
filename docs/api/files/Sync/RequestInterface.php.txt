@@ -6,7 +6,7 @@
  * Time: 13:08
  */
 
-namespace Bold\PIMService\Sync;
+namespace Edg\ErpService\Sync;
 
 
 interface RequestInterface

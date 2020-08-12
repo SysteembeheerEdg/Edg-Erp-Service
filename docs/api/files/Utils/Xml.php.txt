@@ -6,7 +6,7 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Utils;
+namespace Edg\ErpService\Utils;
 
 
 class Xml

@@ -6,12 +6,12 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Sync\Push;
+namespace Edg\ErpService\Sync\Push;
 
 
-use Bold\PIMService\Response\UploadOrders;
+use Edg\ErpService\Response\UploadOrders;
 
-class OrderExport extends \Bold\PIMService\Sync\Request
+class OrderExport extends \Edg\ErpService\Sync\Request
 {
     /**
      * Amount of maximum order items in a single soap call
@@ -44,12 +44,12 @@ class OrderExport extends \Bold\PIMService\Sync\Request
     const REQUEST_TYPE_EXPORT_FAILED = 'export failed';
 
     /**
-     * @var \Bold\PIMService\DataModel\Order
+     * @var \Edg\ErpService\DataModel\Order
      */
     protected $order;
     protected $args;
     /**
-     * @var \Bold\PIMService\Utils\Xml
+     * @var \Edg\ErpService\Utils\Xml
      */
     protected $xmlUtils;
 
@@ -66,8 +66,8 @@ class OrderExport extends \Bold\PIMService\Sync\Request
         $args = [],
         $settings = []
     ) {
-        if (!$order instanceof \Bold\PIMService\DataModel\Order) {
-            throw new \Exception(__CLASS__ . ' requires an order of type \\Bold\\PIMService\\DataModel\\Order');
+        if (!$order instanceof \Edg\ErpService\DataModel\Order) {
+            throw new \Exception(__CLASS__ . ' requires an order of type \\Edg\\ErpService\\DataModel\\Order');
         }
 
 
@@ -86,13 +86,13 @@ class OrderExport extends \Bold\PIMService\Sync\Request
         $this->args = $args;
         $this->order = $order;
 
-        $this->xmlUtils = new \Bold\PIMService\Utils\Xml();
+        $this->xmlUtils = new \Edg\ErpService\Utils\Xml();
 
         parent::__construct($client, $settings);
     }
 
     /**
-     * @return \Bold\PIMService\Response\UploadOrders[]
+     * @return \Edg\ErpService\Response\UploadOrders[]
      */
     public function execute()
     {

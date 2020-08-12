@@ -6,12 +6,12 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Sync\Pull;
+namespace Edg\ErpService\Sync\Pull;
 
-use Bold\PIMService\DataModel\OrderStatus;
-use Bold\PIMService\Response\OrderStatus as OrderStatusResponse;
+use Edg\ErpService\DataModel\OrderStatus;
+use Edg\ErpService\Response\OrderStatus as OrderStatusResponse;
 
-class OrderImport extends \Bold\PIMService\Sync\Request
+class OrderImport extends \Edg\ErpService\Sync\Request
 {
     protected $environment;
 

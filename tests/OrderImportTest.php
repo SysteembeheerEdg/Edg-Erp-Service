@@ -1,5 +1,5 @@
 <?php
-namespace Bold\PIMService\Test;
+namespace Edg\ErpService\Test;
 
 class OrderImportTest extends Client
 {

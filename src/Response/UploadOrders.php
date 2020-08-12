@@ -6,7 +6,7 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Response;
+namespace Edg\ErpService\Response;
 
 
 class UploadOrders

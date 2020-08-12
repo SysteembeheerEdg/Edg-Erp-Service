@@ -1,12 +1,6 @@
 <?php
-/**
- * Order
- *
- * @copyright Copyright © 2017 Bold Commerce BV. All rights reserved.
- * @author    dev@boldcommerce.nl
- */
 
-namespace Bold\PIMService\DataModel;
+namespace Edg\ErpService\DataModel;
 
 
 class Order

@@ -6,7 +6,7 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\DataModel;
+namespace Edg\ErpService\DataModel;
 
 
 class OrderStatus

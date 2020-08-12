@@ -1,38 +1,29 @@
 <?php
-/**
- * ArticleInfo
- *
- * @copyright Copyright © 2017 Bold Commerce BV. All rights reserved.
- * @author    dev@boldcommerce.nl
- */
 
-namespace Bold\PIMService\DataModel;
-
+namespace Edg\ErpService\DataModel;
 
 class ArticleInfo
 {
     const NOT_FOUND = 'no article found';
     const BACKORDER_TRUE = 'true';
-    
+
     protected $simpleXML;
     protected $priceTiers = [];
-
 
     public function __construct(\SimpleXMLElement $element)
     {
         $this->simpleXML = $element;
-        
-        if($element->pricetiers){
-            foreach($element->pricetiers->tier as $tier){
+
+        if ($element->pricetiers) {
+            foreach ($element->pricetiers->tier as $tier) {
                 $this->priceTiers[] = [
                     'amount' => $tier->amount->__toString(),
                     'price' => $tier->price->__toString()
                 ];
             }
         }
-
     }
-    
+
     public function isArticleExist()
     {
         return !$this->simpleXML->status || $this->simpleXML->status != self::NOT_FOUND;
@@ -40,7 +31,7 @@ class ArticleInfo
 
     /**
      * returns the status. Only set when the request article does not exist.
-     * 
+     *
      * @return String
      */
     public function getStatus()
@@ -82,7 +73,7 @@ class ArticleInfo
 
     /**
      * amount of stock available
-     * 
+     *
      * @return int
      */
     public function getAvailable()
@@ -225,10 +216,10 @@ class ArticleInfo
     {
         return $this->simpleXML->isbn->__toString();
     }
-    
+
     public function getData($key)
     {
-        return $this->simpleXML->$key;   
+        return $this->simpleXML->$key;
     }
 
     public function getAllAsSimpleXml()

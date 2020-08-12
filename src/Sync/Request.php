@@ -6,14 +6,14 @@
  * @author    dev@boldcommerce.nl
  */
 
-namespace Bold\PIMService\Sync;
+namespace Edg\ErpService\Sync;
 
 /**
  * Class Request
  *
  * abstract class for all classes that implement a connection with the EDG Progress server
  *
- * @package Bold\PIMService\Sync
+ * @package Edg\ErpService\Sync
  */
 abstract class Request implements RequestInterface
 {
@@ -37,8 +37,8 @@ abstract class Request implements RequestInterface
      * @param \SoapClient $soap fully configured soap client object
      * @param array $settings   additional settings for the api
      *
-     * @see \Bold\PIMService\Sync\Request::$settings
-     * @see \Bold\PIMService\Sync\Request::$client
+     * @see \Edg\ErpService\Sync\Request::$settings
+     * @see \Edg\ErpService\Sync\Request::$client
      */
     public function __construct(
         \SoapClient $soap,
