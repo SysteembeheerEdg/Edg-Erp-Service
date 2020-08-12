@@ -1,0 +1,32 @@
+<orders>
+    <order>
+        <orderId>100002945</orderId>
+        <status>shipped</status>
+        <orderrows>
+            <orderrow>
+                <sku>1000070</sku>
+                <ordered>1</ordered>
+                <invoiced>1</invoiced>
+                <shipped>1</shipped>
+            </orderrow>
+            <orderrow>
+                <sku>1000075</sku>
+                <ordered>2</ordered>
+                <invoiced>2</invoiced>
+                <shipped>2</shipped>
+            </orderrow>
+            <orderrow>
+                <sku>1000080</sku>
+                <ordered>7</ordered>
+                <invoiced>7</invoiced>
+                <shipped>3</shipped>
+            </orderrow>
+        </orderrows>
+        <barcodes>
+            <barcode>
+                <code>3SYSGZ195795201</code>
+                <zipcode>1019as</zipcode>
+            </barcode>
+        </barcodes>
+    </order>
+</orders>

@@ -1,0 +1,238 @@
+<?php
+/**
+ * ArticleInfo
+ *
+ * @copyright Copyright © 2017 Bold Commerce BV. All rights reserved.
+ * @author    dev@boldcommerce.nl
+ */
+
+namespace Bold\PIMService\DataModel;
+
+
+class ArticleInfo
+{
+    const NOT_FOUND = 'no article found';
+    const BACKORDER_TRUE = 'true';
+    
+    protected $simpleXML;
+    protected $priceTiers = [];
+
+
+    public function __construct(\SimpleXMLElement $element)
+    {
+        $this->simpleXML = $element;
+        
+        if($element->pricetiers){
+            foreach($element->pricetiers->tier as $tier){
+                $this->priceTiers[] = [
+                    'amount' => $tier->amount->__toString(),
+                    'price' => $tier->price->__toString()
+                ];
+            }
+        }
+
+    }
+    
+    public function isArticleExist()
+    {
+        return !$this->simpleXML->status || $this->simpleXML->status != self::NOT_FOUND;
+    }
+
+    /**
+     * returns the status. Only set when the request article does not exist.
+     * 
+     * @return String
+     */
+    public function getStatus()
+    {
+        return $this->simpleXML->status->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticleNumber()
+    {
+        return $this->simpleXML->articlenumber->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->simpleXML->description->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStockValue()
+    {
+        return $this->simpleXML->{'stock-value'}->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInOrder()
+    {
+        return $this->simpleXML->{'in-order'}->__toString();
+    }
+
+    /**
+     * amount of stock available
+     * 
+     * @return int
+     */
+    public function getAvailable()
+    {
+        return (int) $this->simpleXML->available->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIronStock()
+    {
+        return $this->simpleXML->ironstock->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticleStatus()
+    {
+        return $this->simpleXML->articlestatus->__toString();
+    }
+
+    /**
+     * @return String
+     */
+    public function getBackorder()
+    {
+        return $this->simpleXML->backorder->__toString();
+    }
+
+    /**
+     * @return String
+     */
+    public function getBackorderText()
+    {
+        return $this->simpleXML->{'backorder-text'}->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeliverable()
+    {
+        return $this->simpleXML->deliverable->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeliverFrom()
+    {
+        return $this->simpleXML->{'deliver-from'}->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeliverUntil()
+    {
+        return $this->simpleXML->{'deliver-untill'}->__toString();
+    }
+
+    /**
+     * @return String
+     */
+    public function getOrderable()
+    {
+        return $this->simpleXML->orderable->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOrderFrom()
+    {
+        return $this->simpleXML->{'order-from'}->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOrderUntill()
+    {
+        return $this->simpleXML->{'order-untill'}->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->simpleXML->price->__toString();
+    }
+
+    /**
+     * @return array
+     */
+    public function getPriceTiers()
+    {
+        return $this->priceTiers;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVvp()
+    {
+        return $this->simpleXML->vvp->__toString();
+    }
+
+    /**
+     * @return String
+     */
+    public function getBtw()
+    {
+        return $this->simpleXML->btw->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBtwHl()
+    {
+        return $this->simpleXML->{'btw-hl'}->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeight()
+    {
+        return $this->simpleXML->weight->__toString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsbn()
+    {
+        return $this->simpleXML->isbn->__toString();
+    }
+    
+    public function getData($key)
+    {
+        return $this->simpleXML->$key;   
+    }
+
+    public function getAllAsSimpleXml()
+    {
+        return $this->simpleXML;
+    }
+}

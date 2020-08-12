@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="EDG" targetNamespace="urn:edg:wsaedg" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:edg:wsaedg" xmlns:S2="urn:edg:wsaedg:EDG" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="urn:soap-fault:details" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:documentation>Author=EDG Media BV, EncodingType=DOC_LITERAL, WSA_Product=10.2B06 - N/A</wsdl:documentation>
+    <types>
+        <schema elementFormDefault="unqualified" targetNamespace="urn:soap-fault:details" xmlns="http://www.w3.org/2001/XMLSchema"><element name="FaultDetail"><complexType><sequence><element name="errorMessage" type="xsd:string"/><element name="requestID" type="xsd:string"/></sequence></complexType></element></schema>
+        <schema elementFormDefault="qualified" targetNamespace="urn:edg:wsaedg:EDG" xmlns="http://www.w3.org/2001/XMLSchema"><element name="articleinfo"><complexType><sequence><element name="v_nummer" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="articleinfoResponse"><complexType><sequence><element name="result" nillable="true" type="xsd:string"/><element name="v_info" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="articlelist"><complexType><sequence><element name="v_admin" nillable="true" type="xsd:int"/></sequence></complexType></element><element name="articlelistResponse"><complexType><sequence><element name="result" nillable="true" type="xsd:string"/><element name="v_info" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="articlestock"><complexType><sequence><element name="v_nummer" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="articlestockResponse"><complexType><sequence><element name="result" nillable="true" type="xsd:string"/><element name="v_aantal" nillable="true" type="xsd:int"/></sequence></complexType></element><element name="orderstatus2"><complexType><sequence><element name="v_environment" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="orderstatus2Response"><complexType><sequence><element name="result" nillable="true" type="xsd:string"/><element name="v_orders" nillable="true" type="xsd:string"/><element name="v_status" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="stockmutations2"><complexType><sequence><element name="v_environment" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="stockmutations2Response"><complexType><sequence><element name="result" nillable="true" type="xsd:string"/><element name="v_stockmutations" nillable="true" type="xsd:string"/><element name="v_status" nillable="true" type="xsd:string"/></sequence></complexType></element><element name="uploadOrders"><complexType><sequence><element name="v_XML" nillable="true" type="xsd:string"/><element name="v_TYPE" nillable="true" type="xsd:string"/><element name="v_MSGID" nillable="true" type="xsd:int"/></sequence></complexType></element><element name="uploadOrdersResponse"><complexType><sequence><element name="result" nillable="true" type="xsd:string"/><element name="v_STATUS" nillable="true" type="xsd:string"/></sequence></complexType></element></schema>
+    </types>
+    <message name="EDG_stockmutations2">
+        <part name="parameters" element="S2:stockmutations2"/>
+    </message>
+    <message name="EDG_uploadOrdersResponse">
+        <part name="parameters" element="S2:uploadOrdersResponse"/>
+    </message>
+    <message name="EDG_stockmutations2Response">
+        <part name="parameters" element="S2:stockmutations2Response"/>
+    </message>
+    <message name="EDG_uploadOrders">
+        <part name="parameters" element="S2:uploadOrders"/>
+    </message>
+    <message name="EDG_articleinfo">
+        <part name="parameters" element="S2:articleinfo"/>
+    </message>
+    <message name="FaultDetailMessage">
+        <part name="FaultDetail" element="S1:FaultDetail"/>
+    </message>
+    <message name="EDG_orderstatus2Response">
+        <part name="parameters" element="S2:orderstatus2Response"/>
+    </message>
+    <message name="EDG_orderstatus2">
+        <part name="parameters" element="S2:orderstatus2"/>
+    </message>
+    <message name="EDG_articlelist">
+        <part name="parameters" element="S2:articlelist"/>
+    </message>
+    <message name="EDG_articlestockResponse">
+        <part name="parameters" element="S2:articlestockResponse"/>
+    </message>
+    <message name="EDG_articleinfoResponse">
+        <part name="parameters" element="S2:articleinfoResponse"/>
+    </message>
+    <message name="EDG_articlestock">
+        <part name="parameters" element="S2:articlestock"/>
+    </message>
+    <message name="EDG_articlelistResponse">
+        <part name="parameters" element="S2:articlelistResponse"/>
+    </message>
+    <portType name="EDGObj">
+        <operation name="articleinfo">
+            <input message="tns:EDG_articleinfo"/>
+            <output message="tns:EDG_articleinfoResponse"/>
+            <fault name="EDGFault" message="tns:FaultDetailMessage"/>
+        </operation>
+        <operation name="articlelist">
+            <input message="tns:EDG_articlelist"/>
+            <output message="tns:EDG_articlelistResponse"/>
+            <fault name="EDGFault" message="tns:FaultDetailMessage"/>
+        </operation>
+        <operation name="articlestock">
+            <input message="tns:EDG_articlestock"/>
+            <output message="tns:EDG_articlestockResponse"/>
+            <fault name="EDGFault" message="tns:FaultDetailMessage"/>
+        </operation>
+        <operation name="orderstatus2">
+            <input message="tns:EDG_orderstatus2"/>
+            <output message="tns:EDG_orderstatus2Response"/>
+            <fault name="EDGFault" message="tns:FaultDetailMessage"/>
+        </operation>
+        <operation name="stockmutations2">
+            <input message="tns:EDG_stockmutations2"/>
+            <output message="tns:EDG_stockmutations2Response"/>
+            <fault name="EDGFault" message="tns:FaultDetailMessage"/>
+        </operation>
+        <operation name="uploadOrders">
+            <input message="tns:EDG_uploadOrders"/>
+            <output message="tns:EDG_uploadOrdersResponse"/>
+            <fault name="EDGFault" message="tns:FaultDetailMessage"/>
+        </operation>
+    </portType>
+    <binding name="EDGObj" type="tns:EDGObj">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="articleinfo">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EDGFault">
+                <soap:fault name="EDGFault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="articlelist">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EDGFault">
+                <soap:fault name="EDGFault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="articlestock">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EDGFault">
+                <soap:fault name="EDGFault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="orderstatus2">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EDGFault">
+                <soap:fault name="EDGFault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="stockmutations2">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EDGFault">
+                <soap:fault name="EDGFault" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="uploadOrders">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EDGFault">
+                <soap:fault name="EDGFault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="EDGService">
+        <port name="EDGObj" binding="tns:EDGObj">
+            <wsdl:documentation></wsdl:documentation>
+            <soap:address location="http://188.201.92.66:8090/wsa/wsaedg"/>
+        </port>
+    </service>
+</definitions>

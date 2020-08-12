@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+    <info>
+        <articlenumber>1234567</articlenumber>
+        <description>kikker &amp; vriendjes - verliefd</description>
+        <stock-value>1</stock-value>
+        <in-order>0</in-order>
+        <available>1</available>
+        <ironstock>0</ironstock>
+        <articlestatus>Active</articlestatus>
+        <backorder>true</backorder>
+        <backorder-text></backorder-text>
+        <deliverable>true</deliverable>
+        <price>7,9990</price>
+        <pricetiers>
+            <tier>
+                <amount>1</amount>
+                <price>7,990</price>
+            </tier>
+            <tier>
+                <amount>5</amount>
+                <price>7,4990</price>
+            </tier>
+            <tier>
+                <amount>12</amount>
+                <price>6,4990</price>
+            </tier>
+        </pricetiers>
+        <vvp>5,000</vvp>
+        <btw>21,00</btw>
+        <btw-hl>Hoog</btw-hl>
+        <weight>0</weight>
+        <isbn>1234567</isbn>
+    </info>
+    <info>
+        <articlenumber>9876</articlenumber>
+        <status>no article found</status>
+    </info>
+</message>

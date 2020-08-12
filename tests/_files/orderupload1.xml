@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<order>
+    <incrementId><![CDATA[1000001]]></incrementId>
+    <shipping_method><![CDATA[postnl]]></shipping_method>
+    <shipping_amount><![CDATA[4,20]]></shipping_amount>
+    <shipping_incl_tax><![CDATA[4,95]]></shipping_incl_tax>
+    <payment_method_title><![CDATA[banktransfer]]></payment_method_title>
+    <payment_method><![CDATA[banktransfer]]></payment_method>
+    <payment_transactionid><![CDATA[3]]></payment_transactionid>
+    <total_items><![CDATA[5]]></total_items>
+    <discount><![CDATA[]]></discount>
+    <currency><![CDATA[EUR]]></currency>
+    <subtotal><![CDATA[100]]></subtotal>
+    <subtotal_incl_tax><![CDATA[120]]></subtotal_incl_tax>
+    <grandtotal><![CDATA[124,95]]></grandtotal>
+    <total_paid><![CDATA[124,95]]></total_paid>
+    <total_refunded><![CDATA[]]></total_refunded>
+    <total_due><![CDATA[0]]></total_due>
+    <coupon_code><![CDATA[]]></coupon_code>
+    <coupon_rule_name><![CDATA[]]></coupon_rule_name>
+    <order_customer_group_id><![CDATA[1]]></order_customer_group_id>
+    <order_customer_group_name><![CDATA[general]]></order_customer_group_name>
+    <order_brinnummer><![CDATA[]]></order_brinnummer>
+    <order_school_naam><![CDATA[OBS test]]></order_school_naam>
+    <order_functie_besteller><![CDATA[directeur]]></order_functie_besteller>
+    <order_reference><![CDATA[]]></order_reference>
+    <order_ip><![CDATA[]]></order_ip>
+    <additional>
+        <custom_attrib_1><![CDATA[qwerty]]></custom_attrib_1>
+    </additional>
+    <vat_number><![CDATA[]]></vat_number>
+    <environment_tag><![CDATA[dummy env]]></environment_tag>
+    <addresses>
+        <shipping>
+            <city><![CDATA[shipping city]]></city>
+            <company><![CDATA[]]></company>
+            <country_id><![CDATA[NL]]></country_id>
+            <email><![CDATA[shipping@example.com]]></email>
+            <fax><![CDATA[]]></fax>
+            <telephone><![CDATA[123456789]]></telephone>
+            <firstname><![CDATA[ship]]></firstname>
+            <lastname><![CDATA[ping]]></lastname>
+            <middlename><![CDATA[]]></middlename>
+            <postcode><![CDATA[1234 AB]]></postcode>
+            <prefix><![CDATA[]]></prefix>
+            <region><![CDATA[]]></region>
+            <street><![CDATA[shipping street]]></street>
+            <vat_id><![CDATA[]]></vat_id>
+        </shipping>
+        <billing>
+            <city><![CDATA[billing city]]></city>
+            <company><![CDATA[billing company]]></company>
+            <country_id><![CDATA[NL]]></country_id>
+            <email><![CDATA[billing@example.com]]></email>
+            <fax><![CDATA[]]></fax>
+            <telephone><![CDATA[987654321]]></telephone>
+            <firstname><![CDATA[bi]]></firstname>
+            <lastname><![CDATA[ing]]></lastname>
+            <middlename><![CDATA[ll]]></middlename>
+            <postcode><![CDATA[9876 ZY]]></postcode>
+            <prefix><![CDATA[Mr]]></prefix>
+            <region><![CDATA[billing region]]></region>
+            <street><![CDATA[billing street]]></street>
+            <vat_id><![CDATA[]]></vat_id>
+        </billing>
+    </addresses>
+    <customer>
+        <id><![CDATA[1234]]></id>
+        <email><![CDATA[customer@example.com]]></email>
+        <customer_group><![CDATA[default]]></customer_group>
+        <progress_id><![CDATA[2]]></progress_id>
+        <school_naam><![CDATA[OBS test]]></school_naam>
+        <brinnummer><![CDATA[5678]]></brinnummer>
+        <functie_besteller><![CDATA[directeur]]></functie_besteller>
+        <school_bool><![CDATA[1]]></school_bool>
+    </customer>
+    <meta>
+        <type><![CDATA[meta type 1]]></type>
+        <store><![CDATA[Default Store]]></store>
+        <datetime><![CDATA[2017-01-01 06:30:00]]></datetime>
+        <time_offset><![CDATA[GMT+2]]></time_offset>
+    </meta>
+    <items>
+        <item>
+            <item_id><![CDATA[1]]></item_id>
+            <name><![CDATA[simple 1]]></name>
+            <sku><![CDATA[simple-1]]></sku>
+            <qty><![CDATA[3]]></qty>
+            <price><![CDATA[17]]></price>
+            <price_incl_tax><![CDATA[20]]></price_incl_tax>
+            <tax_percent><![CDATA[21]]></tax_percent>
+            <discount_amount><![CDATA[0]]></discount_amount>
+            <row_total><![CDATA[51]]></row_total>
+            <original_price><![CDATA[17]]></original_price>
+            <row_total_incl_tax><![CDATA[60]]></row_total_incl_tax>
+            <product_type><![CDATA[simple]]></product_type>
+        </item>
+        <item>
+            <item_id><![CDATA[2]]></item_id>
+            <name><![CDATA[bundle 1]]></name>
+            <sku><![CDATA[bundle-1]]></sku>
+            <qty><![CDATA[2]]></qty>
+            <price><![CDATA[25]]></price>
+            <price_incl_tax><![CDATA[30]]></price_incl_tax>
+            <tax_percent><![CDATA[6]]></tax_percent>
+            <discount_amount><![CDATA[]]></discount_amount>
+            <row_total><![CDATA[50]]></row_total>
+            <original_price><![CDATA[25]]></original_price>
+            <row_total_incl_tax><![CDATA[60]]></row_total_incl_tax>
+            <product_type><![CDATA[bundle]]></product_type>
+            <configurables>
+                <configurable>
+                    <item_id><![CDATA[3]]></item_id>
+                    <name><![CDATA[simple 2]]></name>
+                    <sku><![CDATA[simple-2]]></sku>
+                    <qty><![CDATA[2]]></qty>
+                    <price><![CDATA[0]]></price>
+                    <price_incl_tax><![CDATA[0]]></price_incl_tax>
+                    <tax_percent><![CDATA[0]]></tax_percent>
+                    <discount_amount><![CDATA[0]]></discount_amount>
+                    <row_total><![CDATA[0]]></row_total>
+                    <original_price><![CDATA[0]]></original_price>
+                    <row_total_incl_tax><![CDATA[0]]></row_total_incl_tax>
+                    <product_type><![CDATA[simple]]></product_type>
+                </configurable>
+            </configurables>
+        </item>
+    </items>
+    <order_remarks><![CDATA[order placed
+
+---
+
+order invoiced]]></order_remarks>
+    <export_type><![CDATA[singlepart]]></export_type>
+    <export_parts_count><![CDATA[1]]></export_parts_count>
+    <export_parts_current><![CDATA[1]]></export_parts_current>
+</order>
