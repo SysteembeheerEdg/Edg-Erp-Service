@@ -1,19 +1,13 @@
 <?php
-/**
- * Client
- *
- * @copyright Copyright © 2017 Bold Commerce BV. All rights reserved.
- * @author    dev@boldcommerce.nl
- */
 
-namespace Bold\PIMService;
+namespace Edg\ErpService;
 
 use Psr\Log\LoggerInterface;
 
 /**
  * Main class to use, for sending commands to the edg server
  *
- * @package Bold\PIMService
+ * @package Edg\ErpService
  */
 class Client
 {
