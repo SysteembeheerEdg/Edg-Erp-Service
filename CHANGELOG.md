@@ -1,3 +1,10 @@
+## 1.1.0 (2022-05-04)
+
+[View Release](git@github.com:SysteembeheerEdg/Edg-Erp-Service.git/commits/tag/1.1.0)
+
+*  [FEATURE][KEDG-15] Added php 7.4 to composer.json *(Dylan Maurits)*
+
+
 ## 1.0.0 (2020-12-16)
 
 [View Release](git@github.com:SysteembeheerEdg/Edg-Erp-Service.git/commits/tag/1.0.0)
