@@ -25,13 +25,14 @@ class OrderImport extends \Edg\ErpService\Sync\Request
      */
     public function __construct(
         \SoapClient $client,
-        $environment,
-        $clientSettings = []
+                    $environment,
+                    $clientSettings = []
     ) {
         if (!$environment) {
             throw new \Exception(__CLASS__ . ' requires an environment tag');
         }
 
+        $this->environment = $environment;
         parent::__construct($client, $clientSettings);
     }
 
