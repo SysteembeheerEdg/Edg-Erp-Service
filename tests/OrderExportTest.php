@@ -18,8 +18,8 @@ class OrderExportTest extends Client
         $result = new \stdClass;
         $result->result = null;
         $result->v_STATUS = "OK";
-        
-        $xml = file_get_contents(__DIR__ . '/_files/orderupload1.xml');
+
+        //$xml = file_get_contents(__DIR__ . '/_files/orderupload1.xml');
 
         $this->soapMock->expects($this->any())
             ->method('uploadOrders')

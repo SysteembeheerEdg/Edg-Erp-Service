@@ -40,7 +40,7 @@ class Xml
                 }
             } else {
                 $node = $orderXml->appendChild(new \DomElement($key));
-                $node->appendChild(new \DOMCdataSection($value));
+                $node->appendChild(new \DOMCdataSection((string)$value));
             }
         }
         $dom->normalize();

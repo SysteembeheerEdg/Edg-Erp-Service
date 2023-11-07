@@ -36,7 +36,7 @@ class Order
         'vat_number',
         'environment_tag'
     ];
-    
+
     private $compositeFields = [
         'meta' => [
             'type',
@@ -73,85 +73,81 @@ class Order
             'original_price',
             'row_total_incl_tax',
             'product_type',
-            
+
             'parent_item_id'
         ],
         'customer' => [
             'id',
             'email',
             'customer_group',
-            'progress_id', 
+            'progress_id',
             'school_naam',
             'brinnummer',
             'functie_besteller',
             'school_bool'
         ]
     ];
-    
-    private $special = [
-        'order_remarks'
-    ];
-    
+
     public function __construct($data = [])
     {
         $this->init($data);
-        
+
         if(!$this->validate()){
             throw new \Exception(sprintf("Invalid order data found:\n%s", print_r($data, true)));
         }
     }
-    
+
     public function getOrderNumber()
     {
         return $this->data['incrementId'];
     }
-    
+
     public function getData()
     {
         return $this->data;
     }
-    
+
     private function validate()
     {
         return true;
     }
-    
+
     private function init($input)
     {
         foreach($this->fields as $key){
-            $this->data[$key] = isset($input[$key]) ? $input[$key] : null;
+            $this->data[$key] = $input[$key] ?? null;
         }
-        
+
         if(isset($input['addresses'])){
             foreach($input['addresses'] as $type => $values){
                 foreach($this->compositeFields['addresses'] as $key){
-                    $this->data['addresses'][$type][$key] = isset($values[$key]) ? $values[$key] : null;
+                    $this->data['addresses'][$type][$key] = $values[$key] ?? null;
                 }
             }
         }
-        
+
         if(isset($input['customer'])){
             foreach($this->compositeFields['customer'] as $key){
-                $this->data['customer'][$key] = isset($input['customer'][$key]) ? $input['customer'][$key] : null;
+                $this->data['customer'][$key] = $input['customer'][$key] ?? null;
             }
         }
-        
+
         if(isset($input['meta'])){
             foreach($this->compositeFields['meta'] as $key){
-                $this->data['meta'][$key] = isset($input['meta'][$key]) ? $input['meta'][$key] : null;
+                $this->data['meta'][$key] = $input['meta'][$key] ?? null;
             }
         }
-        
+
         if(isset($input['items'])){
             foreach($input['items'] as $values){
                 $temp = [];
                 foreach($this->compositeFields['items'] as $key){
-                    $temp[$key] = isset($values[$key]) ? $values[$key] : null;
+                    $temp[$key] = $values[$key] ?? null;
                 }
-                
+
                 $parentId = $temp['parent_item_id'];
                 unset($temp['parent_item_id']);
-                
+
                 if($parentId){
                     $this->data['items'][$parentId]['configurables'][] = $temp;
                 }else{
@@ -159,7 +155,7 @@ class Order
                 }
             }
         }
-        
+
         if(isset($input['order_remarks'])){
             if(is_array($input['order_remarks'])){
                 $this->data['order_remarks'] = implode("\n\n---\n\n", $input['order_remarks']);
@@ -168,6 +164,4 @@ class Order
             }
         }
     }
-    
-
 }
