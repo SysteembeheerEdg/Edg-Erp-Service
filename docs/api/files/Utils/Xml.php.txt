@@ -29,7 +29,7 @@ class Xml
         foreach ($data as $key => $value) {
             if (is_array($value)) {
                 if (substr($nodeName, -1) == "s") {
-                    $nodeName = substr($nodeName, 0, strlen($nodeName) - 1);
+                    $nodeName = substr($nodeName, 0, strlen((string)$nodeName) - 1);
                 } else {
                     $nodeName = "item";
                 }
