@@ -80,10 +80,10 @@ class StockMutations extends Request
     {
         $response = new StockMutationResponse($data->result, $data->v_status);
 
-        if (strlen($data->v_stockmutations) > 1) {
+        if (strlen((string)$data->v_stockmutations) > 1) {
             try {
                 $stockXml = new \SimpleXMLElement('<' . '?xml version="1.0"?' . '>' . "\r\n" . $data->v_stockmutations);
-            } catch (\Exception $exception) {
+            } catch (\Exception) {
                 $this->log(__METHOD__ . ': Stockmutations failed, got invalid response from server:', true);
                 $this->log(var_export($data, true), true);
                 return false;
