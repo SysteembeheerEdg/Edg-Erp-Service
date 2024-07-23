@@ -107,7 +107,7 @@ class OrderExport extends \Edg\ErpService\Sync\Request
 
                 $soapResult = $this->client->uploadOrders(
                     [
-                        'v_XML' => utf8_encode($xmlString),
+                        'v_XML' => mb_convert_encoding($xmlString, 'UTF-8', 'ISO-8859-1'),
                         'v_TYPE' => $this->args['export_type'],
                         'v_MSGID' => $this->appendMsgIdPrefix($order->getOrderNumber()),
                         'v_environment' => $this->args['environment']
